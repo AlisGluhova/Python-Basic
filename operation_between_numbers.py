@@ -1,40 +1,32 @@
-days = int(input())
-room = input()
-grade = input()
-price = 0
-if room == "room for one person":
-    price = 18
-    final_amount = (days - 1) * price
-    if grade == "positive":
-        final_amount = final_amount * 1.25
+N1 = int(input())
+N2 = int(input())
+operator = input()
+result = 0
+if operator == "+":
+    result = N1 + N2
+    if result % 2 == 0:
+        print(f'{N1} + {N2} = {result} - even ')
     else:
-        final_amount = final_amount * 0.90
-    print(f'{final_amount:.2f}')
-elif room == "apartment":
-    price = 25
-    final_amount = (days - 1) * price
-    if days-1 < 10:
-        final_amount = final_amount * 0.70
-    elif 10 <= days-1 <= 15:
-        final_amount = final_amount * 0.65
+        print(f'{N1} + {N2} = {result} - odd')
+elif operator == "-":
+    result = N1 - N2
+    if result % 2 == 0:
+        print(f'{N1} - {N2} = {result} - even ')
     else:
-        final_amount = final_amount * 0.50
-    if grade == "positive":
-        final_amount = final_amount * 1.25
+        print(f'{N1} - {N2} = {result} - odd')
+elif operator == "*":
+    result = N1 * N2
+    if result % 2 == 0:
+        print(f'{N1} * {N2} = {result} - even ')
     else:
-        final_amount = final_amount * 0.90
-    print(f'{final_amount:.2f}')
-elif room == "president apartment":
-    price = 35
-    final_amount = (days - 1) * price
-    if days-1 < 10:
-        final_amount = final_amount * 0.90
-    elif 10 <= days-1 <= 15:
-        final_amount = final_amount * 0.85
-    else:
-        final_amount = final_amount * 0.80
-    if grade == "positive":
-        final_amount = final_amount * 1.25
-    else:
-        final_amount = final_amount * 0.90
-    print(f'{final_amount:.2f}')
+        print(f'{N1} * {N2} = {result} - odd')
+    result = N1 * N2
+elif operator == "/" and N2 !=0:
+    result = N1 / N2
+    print(f'{N1} / {N2} = {result:.2f}')
+elif operator == "%" and N2 != 0:
+    result = N1 % N2
+    print(f"{N1} % {N2} = {result}")
+
+if N2 == 0:
+        print(f'Cannot divide {N1} by zero')
