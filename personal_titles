@@ -1,0 +1,12 @@
+age = float(input())
+gender = input()
+if gender == 'f':
+    if age >= 16:
+        print(f'Ms.')
+    else:
+        print(f'Miss')
+else:
+    if age >= 16:
+        print(f'Mr.')
+    else:
+        print(f'Master')
